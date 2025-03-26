@@ -7,13 +7,7 @@
                 <img src="{{ asset('assets/miles_logo.png') }}" alt="Logo" class="h-15 w-auto">
             </a>
 
-            <!-- Hamburger Menu (Mobile) -->
-            <button class="block md:hidden text-gray-600 dark:text-white focus:outline-none" id="navbar-toggle">
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+
 
             <!-- Navigation Links -->
             <ul class="hidden md:flex space-x-6" id="navbar-menu">
@@ -134,13 +128,21 @@
                     </a>
                 </li>
             </ul>
-            <button id="theme-toggle" class="text-sm px-3 py-1 rounded border flex items-center gap-2">
-                <span id="icon-light" class="hidden">☀️</span>
-                <span id="icon-dark" class="hidden">🌙</span>
-            </button>
+            <div class="flex gap-4">
+                <button id="theme-toggle" class="text-sm px-3 py-1 rounded border flex items-center gap-2">
+                    <span id="icon-light" class="hidden">☀️</span>
+                    <span id="icon-dark" class="hidden">🌙</span>
+                </button>
+                <!-- Hamburger Menu (Mobile) -->
+                <button class="block md:hidden text-gray-600 dark:text-white focus:outline-none" id="navbar-toggle">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
 
-
-
+            </div>
             <!-- Auth Links -->
             <div class="hidden md:block">
                 @auth
