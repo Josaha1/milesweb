@@ -1,5 +1,5 @@
 <nav
-    class="bg-white text-black dark:bg-gray-900 dark:text-white shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300 ">
+    class="bg-white text-black dark:bg-gray-900 dark:text-white shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
     <div class="container mx-auto px-4 ">
         <div class="flex justify-between items-center py-2">
             <!-- Logo -->
@@ -7,12 +7,10 @@
                 <img src="{{ asset('assets/miles_logo.png') }}" alt="Logo" class="h-15 w-auto">
             </a>
 
-
-
             <!-- Navigation Links -->
             <ul class="hidden md:flex space-x-6" id="navbar-menu">
                 <li class="relative group">
-                    <a href="/" class="text-gray-600 dark:text-white hover:text-gray-800">
+                    <a href="/" class="text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">
                         หน้าแรก
                         <span
                             class="absolute left-0 -bottom-1 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
@@ -34,7 +32,7 @@
 
                     <!-- Mega Menu -->
                     <div id="mega-menu"
-                        class="absolute left-1/2 -translate-x-1/3 top-full mt-2 w-screen max-w-7xl bg-white shadow-lg p-8 hidden group-hover:flex gap-10 z-50 transition-all duration-300">
+                        class="absolute left-1/2 -translate-x-1/3 top-full mt-2 w-screen max-w-4xl bg-white shadow-lg p-8 hidden group-hover:flex gap-10 z-50 transition-all duration-300">
 
                         <!-- เมนูหลักแบบหลายคอลัมน์ -->
                         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 flex-grow">
@@ -87,7 +85,7 @@
 
                     <!-- Mega Menu -->
                     <div id="about-mega-menu"
-                        class="absolute left-1/2 -translate-x-1/3 top-full mt-2 w-screen max-w-7xl bg-white shadow-lg p-8 hidden group-hover:flex gap-10 z-50 transition-all duration-300">
+                        class="absolute left-1/2 -translate-x-1/3 top-full mt-2 w-screen max-w-2xl bg-white shadow-lg p-8 hidden group-hover:flex gap-10 z-50 transition-all duration-300">
 
                         <!-- เมนูหลักแบบหลายคอลัมน์ -->
                         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 flex-grow">
@@ -99,14 +97,14 @@
 
 
                 <li class="relative group">
-                    <a href="/team" class="text-gray-600 dark:text-white hover:text-gray-800">
+                    <a href="/team" class="text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">
                         ทีมที่ปรึกษา
                         <span
                             class="absolute left-0 -bottom-1 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
                     </a>
                 </li>
                 <li class="relative group">
-                    <a href="/knowledge" class="text-gray-600 dark:text-white hover:text-gray-800">
+                    <a href="/knowledge" class="text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">
                         ความรู้
                         <span
                             class="absolute left-0 -bottom-1 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
@@ -114,14 +112,14 @@
                 </li>
 
                 <li class="relative group">
-                    <a href="/news" class="text-gray-600 dark:text-white hover:text-gray-800">
+                    <a href="/news" class="text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">
                         ข่าวสาร
                         <span
                             class="absolute left-0 -bottom-1 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
                     </a>
                 </li>
                 <li class="relative group">
-                    <a href="/contact" class="text-gray-600 dark:text-white hover:text-gray-800">
+                    <a href="/contact" class="text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">
                         ติดต่อ
                         <span
                             class="absolute left-0 -bottom-1 w-0 h-[2px] bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
@@ -133,6 +131,7 @@
                     <span id="icon-light" class="hidden">☀️</span>
                     <span id="icon-dark" class="hidden">🌙</span>
                 </button>
+
                 <!-- Hamburger Menu (Mobile) -->
                 <button class="block md:hidden text-gray-600 dark:text-white focus:outline-none" id="navbar-toggle">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -146,42 +145,48 @@
             <!-- Auth Links -->
             <div class="hidden md:block">
                 @auth
-                    <a href="/dashboard" class="text-gray-600 dark:text-white hover:text-gray-800">Dashboard</a>
-                    <form method="POST" action="{{ route('logout') }}" class="inline">
-                        @csrf
-                        <button type="submit" class="text-gray-600 dark:text-white hover:text-gray-800">Logout</button>
-                    </form>
+                    <a href="#"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">Dashboard</a>
                 @else
-                    <a href="#" class="text-gray-600 dark:text-white hover:text-gray-800">Login</a>
-                    <a href="#" class="ml-4 text-gray-600 dark:text-white hover:text-gray-800">Register</a>
+                    <a href="{{ route('login') }}"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        Login
+                    </a>
+
                 @endauth
             </div>
         </div>
 
         <!-- Mobile Menu -->
         <div class="hidden md:hidden transition-all duration-300" id="mobile-menu">
-            <ul class="space-y-4 mt-4">
-                <li><a href="/" class="text-gray-600 dark:text-white hover:text-gray-800">หน้าแรก</a></li>
-                <li><a href="/service1" class="text-gray-600 dark:text-white hover:text-gray-800">บริการ 1</a></li>
-                <li><a href="/service2" class="text-gray-600 dark:text-white hover:text-gray-800">บริการ 2</a></li>
-                <li><a href="/about1" class="text-gray-600 dark:text-white hover:text-gray-800">เกี่ยวกับ 1</a></li>
-                <li><a href="/about2" class="text-gray-600 dark:text-white hover:text-gray-800">เกี่ยวกับ 2</a></li>
-                <li><a href="/team" class="text-gray-600 dark:text-white hover:text-gray-800">ทีมที่ปรึกษา</a></li>
-                <li><a href="/knowledge" class="text-gray-600 dark:text-white hover:text-gray-800">ความรู้</a></li>
-                <li><a href="/news" class="text-gray-600 dark:text-white hover:text-gray-800">ข่าวสาร</a></li>
-                <li><a href="/contact" class="text-gray-600 dark:text-white hover:text-gray-800">ติดต่อ</a></li>
+            <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <li><a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">หน้าแรก</a></li>
+                <li><a href="/service1" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">บริการ 1</a></li>
+                <li><a href="/service2" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">บริการ 2</a></li>
+                <li><a href="/about1" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">เกี่ยวกับ 1</a></li>
+                <li><a href="/about2" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">เกี่ยวกับ 2</a></li>
+                <li><a href="/team" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">ทีมที่ปรึกษา</a></li>
+                <li><a href="/knowledge" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">ความรู้</a></li>
+                <li><a href="/news" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">ข่าวสาร</a></li>
+                <li><a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white hover:text-gray-800 dark:hover:text-gray-200">ติดต่อ</a></li>
                 @auth
-                    <li><a href="/dashboard" class="text-gray-600 dark:text-white hover:text-gray-800">Dashboard</a></li>
-                    <li>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit"
-                                class="text-gray-600 dark:text-white hover:text-gray-800">Logout</button>
-                        </form>
-                    </li>
+                    <a href="#"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">Dashboard</a>
                 @else
-                    <li><a href="#" class="text-gray-600 dark:text-white hover:text-gray-800">Login</a></li>
-                    <li><a href="#" class="text-gray-600 dark:text-white hover:text-gray-800">Register</a></li>
+                    <a href="{{ route("login") }}"
+                        class="flex items-center px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        Login
+                    </a>
                 @endauth
             </ul>
         </div>

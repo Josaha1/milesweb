@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title') Home @parent @endsection
 @section('slider')
     <div id="slider" class="relative w-full pt-16 overflow-hidden max-h-screen">
         <div class="slider-images flex transition-transform duration-1000 ease-in-out">
@@ -71,8 +72,7 @@
 @endsection
 @section('content')
     <main class="py-12 lg:py-20 bg-white text-black dark:dark:bg-gray-900 dark:text-white">
-        <section id="home" class="min-h-screen w-full text-center px-6" data-aos="fade-up"
-            data-aos-duration="1000">
+        <section id="home" class="min-h-screen w-full text-center px-6" data-aos="fade-up" data-aos-duration="1000">
             <div class="group inline-block">
                 <h2 class="text-5xl py-6 cursor-pointer">Consultant Service</h2>
                 <div
@@ -313,6 +313,16 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="mt-8 flex justify-end">
+                    <a href="/news"
+                        class="inline-flex items-center px-6 py-2 bg-orange-600 text-white rounded-full shadow hover:bg-orange-700 transition duration-300">
+                        อ่านทั้งหมด
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
             </div>
 
         </section>
@@ -353,15 +363,23 @@
                             <div class="flex justify-end mt-2 ">
                                 <a href="{{ $release['url'] }}"
                                     class="text-black dark:text-white hover:text-orange-600 transition">
-
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <span>อ่านต่อ ></span>
-                                    </svg>
+                                    <span>อ่านต่อ ></span>
                                 </a>
                             </div>
                         </div>
                     </div>
                 @endforeach
+            </div>
+
+            <!-- อ่านทั้งหมด -->
+            <div class="mt-8 flex justify-end">
+                <a href="/press-release"
+                    class="inline-flex items-center px-6 py-2 bg-orange-600 text-white rounded-full shadow hover:bg-orange-700 transition duration-300">
+                    อ่านทั้งหมด
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
             </div>
         </section>
 
